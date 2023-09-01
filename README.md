@@ -1,40 +1,47 @@
 # Subdomain Enumeration Tool
 
-## Introduction
+The Subdomain Enumeration Tool is a command-line utility written in Go for discovering subdomains of a target domain. It supports concurrent subdomain resolution and includes the ability to read custom subdomains from a file.
 
-This Subdomain Enumeration Tool is designed to take a URL and provide a list of all subdomains associated with that URL. It's a valuable resource for discovering hidden corners of the web and enhancing your cybersecurity efforts.
-
-### Acknowledgment
-
-This project was initiated by Akhil Sharma, the founder of Armur AI. A special thanks to him for entrusting me with this task.
+## Table of Contents
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Custom Subdomains](#custom-subdomains)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Features
+- Concurrent enumeration of subdomains
+- Predefined list of common subdomains to check
+- Ability to read custom subdomains from a file
+- Configurable concurrency level
+- Timeout for resolving subdomains
 
-- **Subdomain Enumeration**: Easily input a URL, and the tool will enumerate all associated subdomains.
+## Prerequisites
+- Go (Golang) installed on your system
+- Internet connectivity to resolve subdomains
 
-- **User-Friendly Frontend**: We've included a simple and intuitive frontend for an excellent user experience.
+## Installation
+1. Clone the repository:
 
-- **Cross-Platform**: This project is designed to compile and run seamlessly across various platforms.
+2. Build the program:
 
-## Getting Started
+    ```sh
+    go build subenum.go
+    ```
 
-To get started with the Subdomain Enumeration Tool, follow these steps:
+3. Run the program:
 
-1. Clone the repository to your local machine.
+    ```sh
+    ./subenum <target_domain> <concurrency_level>
+    ```
 
-2. Navigate to the project directory.
+## Usage
+- `<target_domain>`: The domain for which you want to enumerate subdomains.
+- `<concurrency_level>`: The number of concurrent workers to use for enumeration.
 
-3. Compile and run the tool.
+Example:
 
-4. Access the user-friendly frontend to start enumerating subdomains.
-
-## Architecture
-
-Here's an overview of the project's architecture:
-
-![Architecture Diagram](architecture.png)
-
-- **Frontend**: The user interacts with the tool through a frontend interface, making it accessible and user-friendly.
-
-- **Backend**: The backend handles the URL input, subdomain enumeration, and provides the results to the frontend.
-
+```sh
+./subenum example.com 10
