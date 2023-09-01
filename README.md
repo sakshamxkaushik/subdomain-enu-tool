@@ -41,7 +41,13 @@ The Subdomain Enumeration Tool is a command-line utility written in Go for disco
 - `<target_domain>`: The domain for which you want to enumerate subdomains.
 - `<concurrency_level>`: The number of concurrent workers to use for enumeration.
 
+
 Example:
 
 ```sh
 ./subenum example.com 10
+
+
+## Custom Subdomains
+You can add your custom subdomains to the 2m-subdomains.txt file in the repository. Each subdomain should be on a separate line. The tool will read and include these custom subdomains in the enumeration process.
+
